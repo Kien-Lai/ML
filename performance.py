@@ -1,7 +1,7 @@
 import pickle
 import mnist
 
-list = [0 for x in range(20)] 
+list = [0 for x in range(20)]
 list[0] = 9
 list[1] = 8
 list[2] = 2
@@ -23,7 +23,7 @@ list[17] = 4
 list[18] = 7
 list[19] = 4
 
-filename = 'model.sav'
+filename = 'model_20_init.sav'
 kmeans = pickle.load(open(filename, 'rb'))
 labels = kmeans.labels_
 
@@ -37,4 +37,4 @@ for i in range(10000):
     if list[result[i]] == Labels[i]:
         count = count + 1
 
-print(count)        
+print("Ratio: ", count/len(Images))
